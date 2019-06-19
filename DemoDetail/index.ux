@@ -1,0 +1,105 @@
+<template>
+  <!-- template里只能有一个根节点 -->
+  <div class="demo-page">
+    <text class="title">{{text}}</text>
+    <input class="btn" type="button" value="打开相机" onclick="ajaxres" />
+    <input class="btn" type="button" value="开启震动" onclick="zhengdong" />
+    <input class="btn" type="button" value="请求api" onclick="qingqiu" />
+    
+  </div>
+</template>
+
+<script>
+import barcode from '@system.barcode'
+import vibrator from '@system.vibrator'
+import $fetch from '@system.fetch'
+export default {
+  private: {
+    text: '欢迎打开详情页'
+  },
+  /**
+   * 当用户点击菜单按钮时触发，调用app中定义的方法showMenu
+   * 注意：使用加载器测试`创建桌面快捷方式`功能时，请先在`系统设置`中打开`应用加载器`的`桌面快捷方式`权限
+   */
+  onMenuPress() {
+    this.$app.$def.showMenu()
+  },
+  
+  ajaxres(){
+    // var promise=new promise(function(resolve,reject){
+    //   if(res==0){
+    //     resolve('操作成功')
+    //   }else{
+    //     reject('操作失败')
+    //   }
+
+    // })
+    barcode.scan({
+      success: function(data) {
+        console.log(`${data.result}`)
+      },
+      fail: function(data, code) {
+        console.log(`handling fail, code = ${code}`)
+      }
+    })
+  },
+  zhengdong(){
+    vibrator.vibrate({
+      mode: 'long'
+    })
+  },
+  // 请求接口api 
+  qingqiu(){
+    $fetch.fetch({
+      url: 'https://api.apiopen.top/singlePoetry',
+      method: 'GET'
+    }).then(response => {
+      const result = response.data
+      console.log(`success response, code: ${result.code}, data: ${result.data}`)
+      this.$app.$def.prompt.showDialog({
+        message: 'api接口请求成功'+`${result.data}`,
+        buttons: [
+          {
+            text: '确认',
+            color: '#333333'
+          },
+          {
+            text: '取消',
+            color: '#989898'
+          }
+        ],
+      })
+
+    }).catch(error => {
+      console.log(`Something Error: ${error}`)
+    })
+    
+  }
+ 
+}
+</script>
+
+<style>
+  .demo-page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 40px;
+    text-align: center;
+  }
+  .btn {
+    width: 550px;
+    height: 86px;
+    margin-top: 75px;
+    border-radius: 43px;
+    background-color: #09ba07;
+    font-size: 30px;
+    color: #ffffff;
+  }
+
+
+  
+</style>

@@ -1,0 +1,24 @@
+<template>
+    <div class="tab-group-content">
+        <list class="list">
+            <list-item type="media" class="list-item list-item-top-line">
+                <div class="media-list middleline">
+                    <image src="/Common/img/shuijiao.jpg"></image>
+                    <div class="media-body">
+                        <text class="media-title">幸福</text>
+                        <text class="media-content">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</text>
+                    </div>
+                </div>
+            </list-item>
+            <list-item type="media" class="list-item list-item-bottom-line">
+                <div class="media-list">
+                    <image src="/Common/img/yuantiao.jpg"></image>
+                    <div class="media-body">
+                        <text class="media-title">远眺</text>
+                        <text class="media-content">静静的看这个世界，最后终于疯了.</text>
+                    </div>
+                </div>
+            </list-item>
+        </list>
+    </div>
+</template>

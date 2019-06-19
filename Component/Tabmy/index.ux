@@ -1,0 +1,170 @@
+ <template>
+        <div>
+            <div class="mine-list">
+                <div class="mine-item-list line">
+                    <text>设置</text>
+                    <image src="/Common/img/arrow_right.png"></image>
+                </div>
+                <div class="mine-item-list">
+                    <text>关于</text>
+                    <image src="/Common/img/arrow_right.png"></image>
+                </div>
+            </div>
+            <div class="mine-login">
+                <text>登录</text>
+            </div>
+        </div>
+ </template>
+ <style>
+    @import '../../Common/css/common.css';
+    .tab-bar {
+        height: 100px;
+        border-top-width: 1px;
+        border-color: #bbbbbb;
+        background-color: #ffffff;
+    }
+
+    .tab-content {
+        background-color: #F1EBEB;
+    }
+
+    .tab-group-content {
+        flex-direction: column;
+    }
+
+    .list {
+        margin-top: 20px;
+    }
+
+    .list-card {
+        width: 710px;
+        margin-left: 20px;
+    }
+
+    .list-title {
+        padding: 20px;
+    }
+
+    .list-card-top-radius {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .list-card-bottom-radius {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .list-item {
+        background-color: #FFFFFF;
+    }
+
+    .list-item-top-line {
+        border-top-width: 1px;
+        border-top-color: #c8c7cc;
+    }
+
+    .list-item-bottom-line {
+        border-bottom-width: 1px;
+        border-bottom-color: #c8c7cc;
+    }
+
+    .middleline {
+        border-bottom-width: 1px;
+        border-bottom-color: #c8c7cc;
+    }
+
+    .media-list {
+        margin-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex-direction: row;
+        width: 730px;
+    }
+
+    .media-body {
+        flex-direction: column;
+    }
+
+    .media-list image {
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+    }
+
+    .media-title {
+        width: 600px;
+        color: #000000;
+        font-size: 32px;
+    }
+
+    .media-content {
+        width: 600px;
+        color: #BBBBBB;
+        font-size: 25px;
+        lines: 1;
+        text-overflow: ellipsis;
+        margin-top: 5px;
+    }
+
+    .mine-list {
+        width: 750px;
+        height: 180px;
+        background-color: #ffffff;
+        margin-top: 25px;
+        border-color: #C8C8CB;
+        border-bottom-width: 1px;
+        border-top-width: 1px;
+        flex-direction: column;
+    }
+
+    .mine-item-list {
+        width: 730px;
+        height: 90px;
+        margin-left: 20px;
+        flex-direction: row;
+    }
+
+    .mine-item-list text {
+        width: 200px;
+        height: 90px;
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    .mine-item-list image {
+        width: 16px;
+        height: 30px;
+        margin-left: 479px;
+        margin-top: 35px;
+    }
+
+    .mine-login {
+        width: 750px;
+        height: 90px;
+        background-color: #ffffff;
+        border-color: #C8C8CB;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .line {
+        border-bottom-width: 1px;
+        border-bottom-color: #C8C8CB;
+    }
+
+    .footer-item {
+        width: 250px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-item image {
+        width: 130px;
+    }
+</style>
+ 
+ 
